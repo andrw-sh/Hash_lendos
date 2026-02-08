@@ -396,7 +396,8 @@ export default function Home() {
           <div className="footer-inner">
             <div className="footer-main">
               <div className="brand footer-brand">
-                <span className="brand-mark" aria-hidden="true" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img className="brand-logo" src={`${bp}/brand-pig-closeup.jpg`} alt={site.brandName} />
                 {site.brandName}
               </div>
               <p className="footer-tagline">{site.brandTagline}</p>
