@@ -300,11 +300,11 @@ p {
 /* ── Sections ── */
 
 .section {
-  padding: 34px 0;
+  padding: 52px 0;
 }
 
 .section-head {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .section-head.row {

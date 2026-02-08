@@ -111,12 +111,6 @@ const comparisonRows = [
   { label: 'Приватность', kabanchik: 'изоляция данных', other: 'условия не всегда прозрачны' }
 ];
 
-const stats = [
-  { value: '5 мин', label: 'на запуск' },
-  { value: '3', label: 'канала связи' },
-  { value: '24/7', label: 'на связи' },
-  { value: '99.9%', label: 'uptime' }
-];
 
 const faqItems = [
   {
@@ -193,7 +187,7 @@ export default function Home() {
 
             <div className="hero-action">
               <a className="button primary cta-big" href={site.supportTelegram}>
-                Попробовать 14 дней бесплатно
+                Попробовать бесплатно
               </a>
               <p className="cta-sub">Без карты. Настройка за 5 минут.</p>
               {showHeroNav ? (
@@ -219,23 +213,12 @@ export default function Home() {
           </section>
 
           <ScrollReveal>
-            <section className="stats-bar">
-              {stats.map((s) => (
-                <div key={s.label} className="stat">
-                  <div className="stat-value">{s.value}</div>
-                  <div className="stat-label">{s.label}</div>
-                </div>
-              ))}
-            </section>
-          </ScrollReveal>
-
-          <ScrollReveal>
             <section id="features" className="section">
               <div className="section-head">
                 <h2>
                   Почему выбирают <span className="accent">{site.brandName}а</span>?
                 </h2>
-                <p>Потому что он реально помогает, а не &quot;просто чатик&quot;.</p>
+                <p>&nbsp;</p>
               </div>
               <div className="grid reasons">
                 {reasons.map((item) => (
@@ -257,7 +240,7 @@ export default function Home() {
                     Затащи задачи
                     <br />с ИИ на <span className="accent">изи</span>
                   </h2>
-                  <p>Включаем, настраиваем тон, подключаем каналы — и всё работает.</p>
+                  <p>&nbsp;</p>
                 </div>
 
                 <div className="compare" aria-label="Сравнение">
@@ -317,50 +300,6 @@ export default function Home() {
                     />
                   </div>
                 ))}
-              </div>
-            </section>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <section id="pricing" className="section pricing">
-              <div className="section-head row">
-                <div>
-                  <h2>Тарифы</h2>
-                  <p>14 дней бесплатно. Подстроим под твой объём.</p>
-                </div>
-                <div className="mini-cta">
-                  <a className="button small primary" href={site.supportTelegram}>
-                    Хочу цену
-                  </a>
-                </div>
-              </div>
-
-              <div className="grid pricing-grid">
-                {plans.map((plan) => (
-                  <div key={plan.name} className={`card plan ${plan.featured ? 'featured' : ''}`}>
-                    {plan.featured && <div className="plan-badge">Популярный</div>}
-                    <div className="plan-top">
-                      <h3>{plan.name}</h3>
-                      <div className="price">
-                        <span>{plan.price}</span>
-                        <small>₽/мес</small>
-                      </div>
-                      <div className="meta">{plan.meta}</div>
-                    </div>
-                    <ul>
-                      {plan.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                    <a className="button primary" href={site.supportTelegram}>
-                      {plan.cta}
-                    </a>
-                  </div>
-                ))}
-              </div>
-
-              <div className="fine">
-                Нужен другой лимит? <a href={site.supportTelegram}>Пиши в Telegram</a>.
               </div>
             </section>
           </ScrollReveal>
