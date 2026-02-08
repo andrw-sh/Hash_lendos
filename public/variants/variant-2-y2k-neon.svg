@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2B"/>
+      <stop offset="50%" stop-color="#120D24"/>
+      <stop offset="100%" stop-color="#0F0B1D"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.4" r="0.5">
+      <stop offset="0%" stop-color="#C8FF57" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#5FE3FF" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#1A0F2B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="neon" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="14" flood-color="#5FE3FF" flood-opacity="0.6"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="24" flood-color="#C8FF57" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <circle cx="980" cy="180" r="220" fill="url(#glow)"/>
+  <g opacity="0.3" stroke="#3B2D5A" stroke-width="1">
+    <path d="M0 720H1400"/>
+    <path d="M0 660H1400"/>
+    <path d="M0 600H1400"/>
+    <path d="M0 540H1400"/>
+    <path d="M0 480H1400"/>
+    <path d="M0 420H1400"/>
+    <path d="M0 360H1400"/>
+    <path d="M0 300H1400"/>
+    <path d="M0 240H1400"/>
+    <path d="M0 180H1400"/>
+  </g>
+  <rect x="640" y="180" width="600" height="420" rx="28" fill="#1E1732" stroke="#5FE3FF" stroke-width="2" filter="url(#neon)"/>
+  <rect x="680" y="220" width="160" height="30" rx="14" fill="#C8FF57" opacity="0.9"/>
+  <rect x="680" y="270" width="360" height="46" rx="22" fill="#2B2340" stroke="#5FE3FF"/>
+  <rect x="680" y="330" width="400" height="62" rx="26" fill="#241D39" stroke="#C8FF57"/>
+  <rect x="940" y="410" width="220" height="50" rx="24" fill="#2B2340" stroke="#5FE3FF"/>
+  <rect x="680" y="490" width="260" height="16" rx="8" fill="#5FE3FF" opacity="0.4"/>
+  <rect x="980" y="490" width="170" height="16" rx="8" fill="#C8FF57" opacity="0.4"/>
+</svg>

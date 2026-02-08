@@ -1,0 +1,23 @@
+{
+  "brandName": "Кабанчик",
+  "brandTagline": "Личный ассистент за 5 минут",
+  "customDomain": "REPLACE_WITH_DOMAIN",
+  "heroImageSrc": "/brand-pig.jpeg",
+  "heroImageAlt": "Кабанчик в деловом костюме с планшетом",
+  "ui": {
+    "showFeatures": false,
+    "showPricing": false,
+    "showContactLinks": false
+  },
+  "supportTelegram": "https://t.me/your_handle",
+  "prices": {
+    "starter": "2 900",
+    "pro": "8 900",
+    "enterprise": "22 900"
+  },
+  "messageLimits": {
+    "starter": "8 000",
+    "pro": "45 000",
+    "enterprise": "130 000"
+  }
+}

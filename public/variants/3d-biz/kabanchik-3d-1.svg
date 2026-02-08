@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3BA1F2"/>
+      <stop offset="100%" stop-color="#1E6BD6"/>
+    </linearGradient>
+    <radialGradient id="face" cx="0.4" cy="0.3" r="0.7">
+      <stop offset="0%" stop-color="#D9A07B"/>
+      <stop offset="100%" stop-color="#B57B5C"/>
+    </radialGradient>
+    <linearGradient id="suit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#556B8C"/>
+      <stop offset="100%" stop-color="#2E405B"/>
+    </linearGradient>
+    <linearGradient id="tie" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F4A453"/>
+      <stop offset="100%" stop-color="#D6792A"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" rx="64" fill="url(#bg)"/>
+  <circle cx="820" cy="140" r="36" fill="#FFFFFF" opacity="0.25"/>
+  <circle cx="180" cy="860" r="54" fill="#FFFFFF" opacity="0.18"/>
+
+  <!-- Head -->
+  <ellipse cx="520" cy="320" rx="220" ry="200" fill="url(#face)" filter="url(#shadow)"/>
+  <ellipse cx="360" cy="190" rx="90" ry="70" fill="#B57B5C"/>
+  <ellipse cx="680" cy="190" rx="90" ry="70" fill="#B57B5C"/>
+  <ellipse cx="360" cy="200" rx="55" ry="42" fill="#E6A27C"/>
+  <ellipse cx="680" cy="200" rx="55" ry="42" fill="#E6A27C"/>
+
+  <!-- Hair tuft -->
+  <path d="M500 120c-30 40-10 70 30 80 10-40-5-70-30-80z" fill="#8B5E45"/>
+
+  <!-- Eyes -->
+  <ellipse cx="450" cy="300" rx="28" ry="34" fill="#2E2E2E"/>
+  <ellipse cx="595" cy="300" rx="28" ry="34" fill="#2E2E2E"/>
+  <circle cx="440" cy="290" r="10" fill="#FFFFFF"/>
+  <circle cx="585" cy="290" r="10" fill="#FFFFFF"/>
+
+  <!-- Snout -->
+  <ellipse cx="520" cy="370" rx="95" ry="70" fill="#D89273"/>
+  <ellipse cx="490" cy="370" rx="20" ry="26" fill="#8B5E45"/>
+  <ellipse cx="550" cy="370" rx="20" ry="26" fill="#8B5E45"/>
+
+  <!-- Tusks -->
+  <path d="M410 380c-30 20-40 60-20 80 30 0 40-30 50-60" fill="#F4E6D6"/>
+  <path d="M630 380c30 20 40 60 20 80-30 0-40-30-50-60" fill="#F4E6D6"/>
+
+  <!-- Suit -->
+  <path d="M300 560c90-70 310-70 400 0v260H300V560z" fill="url(#suit)"/>
+  <rect x="430" y="520" width="180" height="280" rx="40" fill="#F2F2F2"/>
+  <polygon points="520,540 580,640 520,760 460,640" fill="url(#tie)"/>
+
+  <!-- Arms -->
+  <path d="M260 610c-60 30-70 130-10 150l80 30 20-80-60-20c-10-40-10-60-30-80z" fill="#4B5C76"/>
+  <path d="M740 610c60 30 70 130 10 150l-80 30-20-80 60-20c10-40 10-60 30-80z" fill="#4B5C76"/>
+
+  <!-- Tablet -->
+  <rect x="330" y="670" width="300" height="200" rx="24" fill="#D9DDE4" stroke="#B0B7C2" stroke-width="6"/>
+  <circle cx="605" cy="840" r="10" fill="#98A3B2"/>
+</svg>

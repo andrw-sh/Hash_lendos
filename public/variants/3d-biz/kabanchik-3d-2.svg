@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6CC4FF"/>
+      <stop offset="100%" stop-color="#3577E0"/>
+    </linearGradient>
+    <radialGradient id="face" cx="0.5" cy="0.35" r="0.7">
+      <stop offset="0%" stop-color="#DFA77F"/>
+      <stop offset="100%" stop-color="#B77C5D"/>
+    </radialGradient>
+    <linearGradient id="suit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4C5A72"/>
+      <stop offset="100%" stop-color="#2C3647"/>
+    </linearGradient>
+    <linearGradient id="tie" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E7644C"/>
+      <stop offset="100%" stop-color="#C24736"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" rx="64" fill="url(#bg)"/>
+  <circle cx="140" cy="160" r="40" fill="#FFFFFF" opacity="0.25"/>
+  <circle cx="900" cy="840" r="60" fill="#FFFFFF" opacity="0.18"/>
+
+  <ellipse cx="520" cy="320" rx="220" ry="200" fill="url(#face)" filter="url(#shadow)"/>
+  <ellipse cx="350" cy="200" rx="95" ry="75" fill="#B77C5D"/>
+  <ellipse cx="690" cy="200" rx="95" ry="75" fill="#B77C5D"/>
+  <ellipse cx="350" cy="210" rx="55" ry="42" fill="#E9A882"/>
+  <ellipse cx="690" cy="210" rx="55" ry="42" fill="#E9A882"/>
+
+  <path d="M500 130c-28 36-6 68 28 78 12-40-2-70-28-78z" fill="#8C5E45"/>
+
+  <ellipse cx="455" cy="305" rx="26" ry="32" fill="#2A2A2A"/>
+  <ellipse cx="595" cy="305" rx="26" ry="32" fill="#2A2A2A"/>
+  <circle cx="446" cy="296" r="10" fill="#FFFFFF"/>
+  <circle cx="585" cy="296" r="10" fill="#FFFFFF"/>
+
+  <ellipse cx="520" cy="380" rx="90" ry="66" fill="#D89071"/>
+  <ellipse cx="490" cy="380" rx="18" ry="24" fill="#8B5E45"/>
+  <ellipse cx="550" cy="380" rx="18" ry="24" fill="#8B5E45"/>
+
+  <path d="M410 390c-30 18-40 56-20 78 28 0 38-26 50-56" fill="#F7EBDD"/>
+  <path d="M630 390c30 18 40 56 20 78-28 0-38-26-50-56" fill="#F7EBDD"/>
+
+  <path d="M290 560c100-80 360-80 460 0v280H290V560z" fill="url(#suit)"/>
+  <rect x="430" y="520" width="180" height="300" rx="40" fill="#F3F3F3"/>
+  <polygon points="520,540 590,650 520,780 450,650" fill="url(#tie)"/>
+
+  <path d="M260 610c-60 30-70 120-10 140l80 30 22-80-60-22c-12-34-12-56-32-68z" fill="#425064"/>
+  <path d="M760 610c60 30 70 120 10 140l-80 30-22-80 60-22c12-34 12-56 32-68z" fill="#425064"/>
+
+  <rect x="360" y="660" width="300" height="210" rx="26" fill="#D9DEE6" stroke="#ADB6C2" stroke-width="6"/>
+  <circle cx="635" cy="850" r="10" fill="#98A3B2"/>
+</svg>
