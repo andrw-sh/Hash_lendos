@@ -1,6 +1,8 @@
 import site from '../site.config.json';
 import { HeroImage } from '../components/HeroImage';
 import { UseCaseSlideshow } from '../components/UseCaseSlideshow';
+import { ScrollReveal } from '../components/ScrollReveal';
+import { StickyBar } from '../components/StickyBar';
 
 const useCases = ['для рутины', 'для обучения', 'для поездки', 'для планирования', 'для дел'];
 
@@ -10,21 +12,24 @@ const plans = [
     price: site.prices.starter,
     meta: `${site.messageLimits.starter} сообщений/мес · 1 ассистент`,
     items: ['Все каналы', 'База знаний', 'Базовая аналитика'],
-    featured: false
+    featured: false,
+    cta: 'Попробовать'
   },
   {
     name: 'Pro',
     price: site.prices.pro,
     meta: `${site.messageLimits.pro} сообщений/мес · до 3 ассистентов`,
     items: ['Брендинг', 'Расширенная аналитика', 'Приоритетная поддержка'],
-    featured: true
+    featured: true,
+    cta: 'Подключить Pro'
   },
   {
     name: 'Team',
     price: site.prices.enterprise,
     meta: `${site.messageLimits.enterprise} сообщений/мес · до 10 ассистентов`,
     items: ['SLA 99.9%', 'Интеграции', 'Выделенная поддержка'],
-    featured: false
+    featured: false,
+    cta: 'Обсудить'
   }
 ];
 
@@ -56,7 +61,7 @@ const reasons = [
   },
   {
     title: 'Вежливый, но не скучный',
-    text: 'Тон общения настраивается: “деловой” или “по‑братски”.',
+    text: 'Тон общения настраивается: "деловой" или "по\u2011братски".',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M5 6h14v10a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V6z" />
@@ -80,17 +85,20 @@ const steps = [
   {
     n: '01',
     title: 'Подключаем канал',
-    text: 'Telegram / WhatsApp / Web — выбери нужное.'
+    text: 'Telegram / WhatsApp / Web — выбери нужное.',
+    mockup: '/mockups/phone-onboarding.svg'
   },
   {
     n: '02',
     title: 'Задаём стиль',
-    text: 'Тон, правила и сценарии — под твой вайб.'
+    text: 'Тон, правила и сценарии — под твой вайб.',
+    mockup: '/mockups/phone-settings.svg'
   },
   {
     n: '03',
     title: 'Запускаем',
-    text: 'Кабанчик отвечает, ты занимаешься делами.'
+    text: 'Кабанчик отвечает, ты занимаешься делами.',
+    mockup: '/mockups/phone-chat.svg'
   }
 ];
 
@@ -101,9 +109,53 @@ const comparisonRows = [
   { label: 'Приватность', kabanchik: 'изоляция данных', other: 'условия не всегда прозрачны' }
 ];
 
+const stats = [
+  { value: '5 мин', label: 'на запуск' },
+  { value: '3', label: 'канала связи' },
+  { value: '24/7', label: 'на связи' },
+  { value: '99.9%', label: 'uptime' }
+];
+
+const faqItems = [
+  {
+    q: 'Безопасны ли мои данные?',
+    a: 'Да. Каждый аккаунт изолирован. Мы не используем ваши данные для обучения моделей и не передаём их третьим лицам.'
+  },
+  {
+    q: 'Сколько времени занимает подключение?',
+    a: 'В среднем 5–10 минут. Подключаете канал, задаёте тон и правила — и Кабанчик готов к работе.'
+  },
+  {
+    q: 'Можно ли попробовать бесплатно?',
+    a: 'Да, первые 14 дней бесплатно на любом тарифе. Карта не нужна.'
+  },
+  {
+    q: 'Какие каналы поддерживаются?',
+    a: 'Telegram, WhatsApp и веб\u2011чат. Подключение новых каналов — в планах.'
+  },
+  {
+    q: 'Что если мне нужно больше сообщений?',
+    a: 'Напишите нам — подберём индивидуальный лимит под ваш объём.'
+  }
+];
+
+const CheckIcon = () => (
+  <svg className="compare-icon check" viewBox="0 0 20 20" aria-hidden="true">
+    <path d="M5 10l3 3 7-7" />
+  </svg>
+);
+
+const CrossIcon = () => (
+  <svg className="compare-icon cross" viewBox="0 0 20 20" aria-hidden="true">
+    <path d="M6 6l8 8M14 6l-8 8" />
+  </svg>
+);
+
 export default function Home() {
   return (
     <div className="wrap" id="top">
+      <StickyBar href={site.supportTelegram} label="Запишись на демо" />
+
       <div className="shell">
         <header className="topbar">
           <a className="brand brand-slideshow" href="#top">
@@ -123,8 +175,7 @@ export default function Home() {
                   твой <span className="accent">ИИ‑помощник</span>
                 </h1>
                 <p>
-                  Берёт на себя переписку, помогает с заявками и отвечает в каналах. Настрой один раз —
-                  и живи спокойно.
+                  Освободи до 6 часов в неделю. Кабанчик ищет нужное, помогает планировать и отвечает в трёх каналах — пока ты занимаешься важным.
                 </p>
               </div>
 
@@ -140,8 +191,9 @@ export default function Home() {
 
             <div className="hero-action">
               <a className="button primary cta-big" href={site.supportTelegram}>
-                Запишись на демо
+                Попробовать 14 дней бесплатно
               </a>
+              <p className="cta-sub">Без карты. Настройка за 5 минут.</p>
               {showHeroNav ? (
                 <div className="hero-nav" aria-label="Навигация">
                   {showFeaturesLink ? (
@@ -164,134 +216,207 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="features" className="section">
-            <div className="section-head">
-              <h2>
-                Почему выбирают <span className="accent">{site.brandName}</span>?
-              </h2>
-              <p>Потому что он реально помогает, а не “просто чатик”.</p>
-            </div>
-            <div className="grid reasons">
-              {reasons.map((item) => (
-                <div key={item.title} className="card reason">
-                  <div className="icon">{item.icon}</div>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
+          <ScrollReveal>
+            <section className="stats-bar">
+              {stats.map((s) => (
+                <div key={s.label} className="stat">
+                  <div className="stat-value">{s.value}</div>
+                  <div className="stat-label">{s.label}</div>
                 </div>
               ))}
-            </div>
-          </section>
+            </section>
+          </ScrollReveal>
 
-          <section className="section split">
-            <div className="split-grid">
-              <div className="split-copy">
+          <ScrollReveal>
+            <section id="features" className="section">
+              <div className="section-head">
                 <h2>
-                  Затащи задачи
-                  <br />с ИИ на <span className="accent">изи</span>
+                  Почему выбирают <span className="accent">{site.brandName}а</span>?
                 </h2>
-                <p>Включаем, настраиваем тон, подключаем каналы — и всё работает.</p>
+                <p>Потому что он реально помогает, а не &quot;просто чатик&quot;.</p>
               </div>
-
-              <div className="compare" aria-label="Сравнение">
-                <div className="compare-card">
-                  <table className="compare-table">
-                    <thead>
-                      <tr>
-                        <th scope="col" />
-                        <th scope="col">{site.brandName}</th>
-                        <th scope="col">Другой ИИ‑помощник</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {comparisonRows.map((row) => (
-                        <tr key={row.label}>
-                          <th scope="row">{row.label}</th>
-                          <td>{row.kabanchik}</td>
-                          <td>{row.other}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                  <div className="compare-note">*Сравнение обобщённое</div>
-                </div>
-                <div className="float float-a" aria-hidden="true" />
-                <div className="float float-b" aria-hidden="true" />
-              </div>
-            </div>
-          </section>
-
-          <section className="section how">
-            <div className="section-head">
-              <h2>
-                Как это работает, <span className="accent">бро</span>
-              </h2>
-            </div>
-            <div className="grid steps">
-              {steps.map((step) => (
-                <div key={step.n} className="card step">
-                  <div className="step-n">{step.n}</div>
-                  <h3>{step.title}</h3>
-                  <p>{step.text}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section id="pricing" className="section pricing">
-            <div className="section-head row">
-              <div>
-                <h2>Тарифы</h2>
-                <p>Тестовые цены. Подстроим под твой объём.</p>
-              </div>
-              <div className="mini-cta">
-                <a className="button small primary" href={site.supportTelegram}>
-                  Хочу цену
-                </a>
-              </div>
-            </div>
-
-            <div className="grid pricing-grid">
-              {plans.map((plan) => (
-                <div key={plan.name} className={`card plan ${plan.featured ? 'featured' : ''}`}>
-                  <div className="plan-top">
-                    <h3>{plan.name}</h3>
-                    <div className="price">
-                      <span>{plan.price}</span>
-                      <small>₽/мес</small>
-                    </div>
-                    <div className="meta">{plan.meta}</div>
+              <div className="grid reasons">
+                {reasons.map((item) => (
+                  <div key={item.title} className="card reason">
+                    <div className="icon">{item.icon}</div>
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
                   </div>
-                  <ul>
-                    {plan.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                  <a className="button primary" href={site.supportTelegram}>
-                    Начать
+                ))}
+              </div>
+            </section>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <section className="section split">
+              <div className="split-grid">
+                <div className="split-copy">
+                  <h2>
+                    Затащи задачи
+                    <br />с ИИ на <span className="accent">изи</span>
+                  </h2>
+                  <p>Включаем, настраиваем тон, подключаем каналы — и всё работает.</p>
+                </div>
+
+                <div className="compare" aria-label="Сравнение">
+                  <div className="compare-card">
+                    <table className="compare-table">
+                      <thead>
+                        <tr>
+                          <th scope="col" />
+                          <th scope="col" className="col-kabanchik">{site.brandName}</th>
+                          <th scope="col">Другой ИИ‑помощник</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {comparisonRows.map((row) => (
+                          <tr key={row.label}>
+                            <th scope="row">{row.label}</th>
+                            <td className="col-kabanchik">
+                              <CheckIcon />
+                              {row.kabanchik}
+                            </td>
+                            <td className="col-other">
+                              <CrossIcon />
+                              {row.other}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                    <div className="compare-note">*Сравнение обобщённое</div>
+                  </div>
+                  <div className="float float-a" aria-hidden="true" />
+                  <div className="float float-b" aria-hidden="true" />
+                </div>
+              </div>
+            </section>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <section className="section how">
+              <div className="section-head">
+                <h2>
+                  Как это работает
+                </h2>
+              </div>
+              <div className="grid steps">
+                {steps.map((step) => (
+                  <div key={step.n} className="card step">
+                    <div className="step-n">{step.n}</div>
+                    <h3>{step.title}</h3>
+                    <p>{step.text}</p>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      className="step-mockup"
+                      src={step.mockup}
+                      alt={step.title}
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </section>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <section id="pricing" className="section pricing">
+              <div className="section-head row">
+                <div>
+                  <h2>Тарифы</h2>
+                  <p>14 дней бесплатно. Подстроим под твой объём.</p>
+                </div>
+                <div className="mini-cta">
+                  <a className="button small primary" href={site.supportTelegram}>
+                    Хочу цену
                   </a>
                 </div>
-              ))}
-            </div>
+              </div>
 
-            <div className="fine">
-              Нужен другой лимит? <a href={site.supportTelegram}>Пиши в Telegram</a>.
-            </div>
-          </section>
+              <div className="grid pricing-grid">
+                {plans.map((plan) => (
+                  <div key={plan.name} className={`card plan ${plan.featured ? 'featured' : ''}`}>
+                    {plan.featured && <div className="plan-badge">Популярный</div>}
+                    <div className="plan-top">
+                      <h3>{plan.name}</h3>
+                      <div className="price">
+                        <span>{plan.price}</span>
+                        <small>₽/мес</small>
+                      </div>
+                      <div className="meta">{plan.meta}</div>
+                    </div>
+                    <ul>
+                      {plan.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                    <a className="button primary" href={site.supportTelegram}>
+                      {plan.cta}
+                    </a>
+                  </div>
+                ))}
+              </div>
+
+              <div className="fine">
+                Нужен другой лимит? <a href={site.supportTelegram}>Пиши в Telegram</a>.
+              </div>
+            </section>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <section className="section faq">
+              <div className="section-head">
+                <h2>Частые вопросы</h2>
+              </div>
+              <div className="faq-list">
+                {faqItems.map((item) => (
+                  <details key={item.q} className="faq-item">
+                    <summary>{item.q}</summary>
+                    <p>{item.a}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <section className="section final-cta">
+              <h2>Готов попробовать?</h2>
+              <p>Настрой Кабанчика за 5 минут и освободи время для важного.</p>
+              <a className="button primary cta-big" href={site.supportTelegram}>
+                Начать бесплатно
+              </a>
+            </section>
+          </ScrollReveal>
         </main>
 
         <footer className="footer">
           <div className="footer-inner">
-            <div className="brand footer-brand">
-              <span className="brand-mark" aria-hidden="true" />
-              {site.brandName}
-            </div>
-            {showHeroNav ? (
-              <div className="footer-links">
-                {showFeaturesLink ? <a href="#features">Функции</a> : null}
-                {showPricingLink ? <a href="#pricing">Тарифы</a> : null}
-                {showContactLink ? <a href={site.supportTelegram}>Контакт</a> : null}
+            <div className="footer-main">
+              <div className="brand footer-brand">
+                <span className="brand-mark" aria-hidden="true" />
+                {site.brandName}
               </div>
-            ) : null}
+              <p className="footer-tagline">{site.brandTagline}</p>
+            </div>
+            <div className="footer-cols">
+              <div className="footer-col">
+                <h4>Продукт</h4>
+                <a href="#features">Функции</a>
+                <a href="#pricing">Тарифы</a>
+              </div>
+              <div className="footer-col">
+                <h4>Поддержка</h4>
+                <a href={site.supportTelegram}>Telegram</a>
+              </div>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            <span>© 2025 {site.brandName}</span>
+            <div className="footer-legal">
+              <a href="#">Политика конфиденциальности</a>
+              <a href="#">Оферта</a>
+            </div>
           </div>
         </footer>
       </div>
