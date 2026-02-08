@@ -4,6 +4,8 @@ import { UseCaseSlideshow } from '../components/UseCaseSlideshow';
 import { ScrollReveal } from '../components/ScrollReveal';
 import { StickyBar } from '../components/StickyBar';
 
+const bp = process.env.NODE_ENV === 'production' ? '/Hash_lendos' : '';
+
 const useCases = ['для рутины', 'для обучения', 'для поездки', 'для планирования', 'для дел'];
 
 const plans = [
@@ -86,19 +88,19 @@ const steps = [
     n: '01',
     title: 'Подключаем канал',
     text: 'Telegram / WhatsApp / Web — выбери нужное.',
-    mockup: '/mockups/phone-onboarding.svg'
+    mockup: `${bp}/mockups/phone-onboarding.svg`
   },
   {
     n: '02',
     title: 'Задаём стиль',
     text: 'Тон, правила и сценарии — под твой вайб.',
-    mockup: '/mockups/phone-settings.svg'
+    mockup: `${bp}/mockups/phone-settings.svg`
   },
   {
     n: '03',
     title: 'Запускаем',
     text: 'Кабанчик отвечает, ты занимаешься делами.',
-    mockup: '/mockups/phone-chat.svg'
+    mockup: `${bp}/mockups/phone-chat.svg`
   }
 ];
 
@@ -160,7 +162,7 @@ export default function Home() {
         <header className="topbar">
           <a className="brand brand-slideshow" href="#top">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="brand-logo" src="/brand-pig-closeup.jpg" alt={site.brandName} />
+            <img className="brand-logo" src={`${bp}/brand-pig-closeup.jpg`} alt={site.brandName} />
             <UseCaseSlideshow brandName={site.brandName} useCases={useCases} intervalMs={1100} />
           </a>
         </header>
@@ -182,8 +184,8 @@ export default function Home() {
               <div className="hero-art">
                 <HeroImage
                   className="kabanchik-img"
-                  src={site.heroImageSrc}
-                  fallbackSrc="/variants/3d-biz/kabanchik-3d-3.svg"
+                  src={`${bp}${site.heroImageSrc}`}
+                  fallbackSrc={`${bp}/variants/3d-biz/kabanchik-3d-3.svg`}
                   alt={site.heroImageAlt}
                 />
               </div>

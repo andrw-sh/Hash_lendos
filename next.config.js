@@ -2,7 +2,7 @@
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
-  ...(isProd ? { output: 'export' } : {}),
+  ...(isProd ? { output: 'export', basePath: '/Hash_lendos', assetPrefix: '/Hash_lendos/' } : {}),
   images: {
     unoptimized: true
   },
